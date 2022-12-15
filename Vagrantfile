@@ -10,7 +10,7 @@ IP_NW = "192.168.56."
 MASTER_IP_START = 1
 NODE_IP_START = 2
 Vagrant.configure("2") do |config|
-  config.vm.box = "my-box"
+  config.vm.box = "laravel/homestead"
   config.vm.provider "vmware_desktop" do |v|
     v.gui = true
   end
@@ -57,4 +57,3 @@ end
         node.vm.provision "setup-dns", type: "shell", :path => "ubuntu/update-dns.sh"
     end
   end
-end
